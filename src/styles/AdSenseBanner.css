@@ -1,0 +1,93 @@
+/* AdSense banner wrapper.
+ * The min-height reserves vertical space so the ad doesn't shift the layout
+ * (Core Web Vitals — CLS). max-width caps super-wide leaderboard ads from
+ * blowing out narrow content columns. */
+
+.adsense-banner {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 24px auto;
+  min-height: 100px;          /* CLS-safe placeholder */
+  overflow: hidden;
+  text-align: center;
+  contain: layout style;
+}
+
+.adsense-banner > ins {
+  display: block;
+  width: 100%;
+}
+
+.adsense-banner--inline {
+  margin: 16px 0;
+}
+
+@media (max-width: 480px) {
+  .adsense-banner {
+    min-height: 80px;
+    margin: 16px auto;
+  }
+}
+
+/* Consent banner */
+.consent-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1000;
+  background: #0f172a;
+  color: #f1f5f9;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.consent-banner p {
+  margin: 0;
+  flex: 1 1 280px;
+  line-height: 1.4;
+}
+
+.consent-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.consent-primary,
+.consent-secondary {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.consent-primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.consent-primary:hover {
+  background: #1d4ed8;
+}
+
+.consent-secondary {
+  background: transparent;
+  color: #cbd5e1;
+  border-color: #334155;
+}
+
+.consent-secondary:hover {
+  background: #1e293b;
+}
