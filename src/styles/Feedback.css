@@ -1,0 +1,159 @@
+/* Feedback page + form */
+
+.feedback-page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.feedback-main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.feedback-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.feedback-header h1 {
+  margin: 0 0 6px;
+  font-size: 1.9rem;
+  color: #0f172a;
+}
+
+.feedback-header p {
+  margin: 0;
+  color: #475569;
+  font-size: 1rem;
+}
+
+.feedback-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 14px 0 6px;
+}
+
+.feedback-optional {
+  font-weight: 400;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-left: 4px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  resize: vertical;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.feedback-hint {
+  display: block;
+  color: #64748b;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.feedback-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.feedback-counter {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.feedback-counter--over {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.feedback-submit {
+  margin-top: 22px;
+  padding: 12px 18px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.feedback-submit:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.feedback-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.feedback-success {
+  text-align: center;
+  padding: 12px 8px;
+}
+
+.feedback-success h2 {
+  margin: 0 0 8px;
+  color: #15803d;
+  font-size: 1.4rem;
+}
+
+.feedback-success p {
+  margin: 0 0 18px;
+  color: #475569;
+}
+
+/* Footer link */
+.footer-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-left: 8px;
+}
+
+.footer-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .feedback-card {
+    padding: 20px 16px;
+  }
+  .feedback-header h1 {
+    font-size: 1.5rem;
+  }
+}
