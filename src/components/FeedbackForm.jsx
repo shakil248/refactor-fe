@@ -9,14 +9,13 @@ import '../styles/Feedback.css';
  * the useFeedbackForm hook so this component stays focused on layout.
  */
 const FeedbackForm = () => {
-  const form = useFeedbackForm();
   const {
     email, setEmail,
     message, setMessage,
     submitting, error, submitted,
     charCount, maxLength, minLength,
-    handleSubmit, reset,
-  } = form;
+    handleSubmit, reset, clearError,
+  } = useFeedbackForm();
 
   if (submitted) {
     return (
@@ -35,7 +34,7 @@ const FeedbackForm = () => {
 
   return (
     <form className="feedback-form" onSubmit={handleSubmit} noValidate>
-      <ErrorMessage message={error} onClose={() => form.error && (form.error === error)} />
+      <ErrorMessage message={error} onClose={clearError} />
 
       <label htmlFor="feedback-email">Email address <span className="feedback-optional">(optional)</span></label>
       <input

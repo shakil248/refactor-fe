@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import CodeEditor from '../components/CodeEditor';
 import CodeDisplay from '../components/CodeDisplay';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -7,6 +8,7 @@ import Navbar from '../components/Navbar';
 import AdSenseBanner from '../components/AdSenseBanner';
 import { refactorCode } from '../services/apiService';
 import '../styles/App.css';
+import '../styles/Feedback.css';
 
 /**
  * Authenticated dashboard hosting the Java code refactoring workflow.
@@ -119,7 +121,11 @@ const Dashboard = () => {
       </main>
 
       <footer className="app-footer">
-        <p>Made with ❤️</p>
+        <p>
+          Made with ❤️
+          <span aria-hidden="true"> · </span>
+          <Link to="/feedback" className="footer-link">Send feedback</Link>
+        </p>
       </footer>
     </div>
   );

@@ -64,6 +64,8 @@ export const useFeedbackForm = () => {
     setSubmitted(false);
   }, []);
 
+  const clearError = useCallback(() => setError(''), []);
+
   return useMemo(
     () => ({
       email,
@@ -78,8 +80,9 @@ export const useFeedbackForm = () => {
       minLength: MIN_MESSAGE_LENGTH,
       handleSubmit,
       reset,
+      clearError,
     }),
-    [email, message, submitting, error, submitted, charCount, handleSubmit, reset]
+    [email, message, submitting, error, submitted, charCount, handleSubmit, reset, clearError]
   );
 };
 
