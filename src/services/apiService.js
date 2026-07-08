@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://refactor-production-0fd4.up.railway.app'
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://refactor-6x4d.onrender.com'
 
 const ACCESS_TOKEN_KEY = 'accessToken';
 const REFRESH_TOKEN_KEY = 'refreshToken';
