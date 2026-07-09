@@ -122,8 +122,6 @@ const Dashboard = () => {
 
       <footer className="app-footer">
         <p>
-          Made with ❤️
-          <span aria-hidden="true"> · </span>
           <Link to="/feedback" className="footer-link">Send feedback</Link>
         </p>
       </footer>
