@@ -6,11 +6,10 @@ import '../styles/CodeDisplay.css';
 
 /**
  * CodeDisplay Component
- * Displays original and refactored code side-by-side with copy functionality.
- * Highlights modified, added, and removed lines.
+ * Displays the refactored code with copy functionality.
+ * Diff against the original code is still used to highlight modified/added lines.
  */
 const CodeDisplay = ({ originalCode, refactoredCode }) => {
-  const originalEditorRef = useRef(null);
   const refactoredEditorRef = useRef(null);
 
   if (!originalCode || !refactoredCode) {
@@ -20,12 +19,7 @@ const CodeDisplay = ({ originalCode, refactoredCode }) => {
   // Calculate line differences
   const lineDifferences = getLineDifferences(originalCode, refactoredCode);
 
-  // Apply decorations to editors after they're mounted
-  const handleOriginalEditorMount = (editor) => {
-    originalEditorRef.current = editor;
-    applyDecorations(editor, lineDifferences, 'original');
-  };
-
+  // Apply decorations to the editor after it's mounted
   const handleRefactoredEditorMount = (editor) => {
     refactoredEditorRef.current = editor;
     applyDecorations(editor, lineDifferences, 'refactored');
@@ -85,38 +79,12 @@ const CodeDisplay = ({ originalCode, refactoredCode }) => {
       <div className="code-display-container">
         <div className="code-display-section">
           <div className="code-display-header">
-            <h3>Original Code</h3>
-            <CopyButton text={originalCode} label="Copy Original" />
-          </div>
-          <div className="code-display-editor">
-            <Editor
-              height="500px"
-              language="java"
-              value={originalCode}
-              theme="vs-dark"
-              onMount={handleOriginalEditorMount}
-              options={{
-                minimap: { enabled: false },
-                fontSize: 12,
-                lineNumbers: 'on',
-                scrollBeyondLastLine: false,
-                automaticLayout: true,
-                readOnly: true,
-                wordWrap: 'on',
-                glyphMargin: true,
-              }}
-            />
-          </div>
-        </div>
-
-        <div className="code-display-section">
-          <div className="code-display-header">
             <h3>Refactored Code</h3>
             <CopyButton text={refactoredCode} label="Copy Refactored" />
           </div>
           <div className="code-display-editor">
             <Editor
-              height="500px"
+              height="100%"
               language="java"
               value={refactoredCode}
               theme="vs-dark"

@@ -89,7 +89,11 @@ export const getGoogleLoginUrl = () => `${API_BASE_URL}/oauth2/authorization/goo
 
 // ============= Refactor API (existing feature) =============
 
-export const refactorCode = (code) => apiClient.post('/api/refactor', { code });
+export const refactorCode = (code) => {
+  // Strip all spaces and newline characters before sending to the endpoint.
+  const strippedCode = (code || '').replace(/[ \n\r]/g, '');
+  return apiClient.post('/api/refactor', { code: strippedCode });
+};
 
 // ============= Feedback API =============
 

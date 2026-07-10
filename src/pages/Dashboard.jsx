@@ -88,34 +88,36 @@ const Dashboard = () => {
 
         {loading && <LoadingSpinner />}
 
-        <section className="editor-section">
-          <CodeEditor code={inputCode} onChange={setInputCode} disabled={loading} />
+        <div className="workspace-row">
+          <section className="editor-section">
+            <CodeEditor code={inputCode} onChange={setInputCode} disabled={loading} />
 
-          <div className="button-group">
-            <button
-              className="refactor-button"
-              onClick={handleRefactorClick}
-              disabled={loading || !inputCode.trim()}
-              title="Click to refactor your Java code"
-            >
-              {loading ? 'Refactoring...' : '✨ Refactor Code'}
-            </button>
-            <button
-              className="clear-button"
-              onClick={handleClearAll}
-              disabled={loading}
-              title="Clear all content"
-            >
-              🗑️ Clear All
-            </button>
-          </div>
-        </section>
-
-        {(originalCode || refactoredCode) && (
-          <section className="display-section" ref={displaySectionRef}>
-            <CodeDisplay originalCode={originalCode} refactoredCode={refactoredCode} />
+            <div className="button-group">
+              <button
+                className="refactor-button"
+                onClick={handleRefactorClick}
+                disabled={loading || !inputCode.trim()}
+                title="Click to refactor your Java code"
+              >
+                {loading ? 'Refactoring...' : '✨ Refactor Code'}
+              </button>
+              <button
+                className="clear-button"
+                onClick={handleClearAll}
+                disabled={loading}
+                title="Clear all content"
+              >
+                🗑️ Clear All
+              </button>
+            </div>
           </section>
-        )}
+
+          {refactoredCode && (
+            <section className="display-section" ref={displaySectionRef}>
+              <CodeDisplay originalCode={originalCode} refactoredCode={refactoredCode} />
+            </section>
+          )}
+        </div>
 
         <AdSenseBanner adSlot={process.env.REACT_APP_ADSENSE_SLOT_DASHBOARD} responsive />
       </main>

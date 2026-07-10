@@ -18,7 +18,7 @@ const CodeEditor = ({ code, onChange, disabled }) => {
         <span className="char-count">{code.length} characters</span>
       </div>
       <Editor
-        height="400px"
+        height="450px"
         language="java"
         value={code}
         onChange={handleEditorChange}

@@ -1,5 +1,6 @@
 .code-display-wrapper {
   width: 100%;
+  height: 100%;
 }
 
 .change-summary {
@@ -73,9 +74,10 @@
 
 .code-display-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   width: 100%;
+  height: 100%;
 }
 
 .code-display-section {
@@ -106,7 +108,8 @@
 
 .code-display-editor {
   flex: 1;
-  min-height: 500px;
+  min-height: 450px;
+  height: 100%;
   overflow: hidden;
   border-radius: 0 0 0.75rem 0.75rem;
 }
