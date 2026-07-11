@@ -78,8 +78,8 @@ const Dashboard = () => {
       <Navbar />
       <header className="app-header">
         <div className="header-content">
-          <h1>🔄 JAVA Code Refactor Assistant</h1>
-          <p>AI-powered Java code refactoring</p>
+          <h1>🔄 Refactor Java Code in Seconds</h1>
+          <p>Improve readability, performance, SOLID principles, design patterns, and Java best practices using AI.</p>
         </div>
       </header>
 

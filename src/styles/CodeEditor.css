@@ -18,6 +18,33 @@
   margin: 0;
 }
 
+.editor-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.load-sample-btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  padding: 0.35rem 0.85rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.load-sample-btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.load-sample-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .char-count {
   font-size: 0.85rem;
   color: var(--text-secondary);
